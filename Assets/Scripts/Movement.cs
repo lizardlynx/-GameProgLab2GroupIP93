@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private float speed = 20f;
-    private float jumpSpeed = 15f;
+    private float speed;
+    private float jumpSpeed;
     private Rigidbody rb;
-    private bool grounded = false;
+    private bool grounded;
     public Transform orientation;
+    
     // Start is called before the first frame update
     void Start()
     {
+        speed = 20f;
+        jumpSpeed = 15f;
+        grounded = false;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -22,7 +26,8 @@ public class Movement : MonoBehaviour
         float zDirection = Input.GetAxis("Vertical");
 
         Vector3 moveDirection = orientation.forward * zDirection + orientation.right * xDirection;
-        var velocity = rb.velocity;
+
+        Vector3 velocity = rb.velocity;
         velocity.x = moveDirection.x * speed;
         velocity.z = moveDirection.z * speed;
         rb.velocity = velocity;

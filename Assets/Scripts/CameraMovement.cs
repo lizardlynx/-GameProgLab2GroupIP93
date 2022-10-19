@@ -9,11 +9,12 @@ public class CameraMovement : MonoBehaviour
     public Transform playerObject;
     private Rigidbody playerRb;
 
-    private float rotationSpeed = 7;
+    private float rotationSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
+        rotationSpeed = 7;
         playerRb = player.gameObject.GetComponent<Rigidbody>();
     }
 

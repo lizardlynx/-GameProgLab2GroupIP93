@@ -17,15 +17,8 @@ public class Score : MonoBehaviour
         score = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void AddPoint()
     {
-        Debug.Log(score);
         score += 1;
         text.SetText(score.ToString()+"/3");
         if (score == 3) 
